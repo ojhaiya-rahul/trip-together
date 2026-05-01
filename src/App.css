@@ -1,0 +1,186 @@
+/* --- Global Variables --- */
+:root {
+  --primary: #818cf8; 
+  --glass: rgba(255, 255, 255, 0.1); 
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-bright: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.6);
+  --bg-dark: rgba(0, 0, 0, 0.4);
+}
+
+/* --- Base Layout --- */
+* {
+  box-sizing: border-box; /* Critical: prevents padding from pushing width beyond 100% */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  color: var(--text-bright);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  backdrop-filter: blur(8px); 
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Navigation --- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%; 
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-bright);
+  padding: 10px 22px;
+  margin-left: 10px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* --- Content Container --- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0; /* Vertical padding only */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- The Managed Card Grid (Fixed Card-to-Container Touching) --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  /* Fixed: This padding creates the gap between the cards and the container edge */
+  padding: 20px 5%; 
+  width: 100%;
+  justify-content: center;
+}
+
+/* --- Traveler Card --- */
+.user-card {
+  background: rgba(255, 255, 255, 0.08); 
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  padding: 35px; 
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  width: 100%; /* Ensures it respects the grid cell */
+}
+
+.user-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.card-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.data-label {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.data-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.connect-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto; 
+  transition: 0.3s ease;
+}
+
+.connect-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* --- Footer --- */
+.main-footer {
+  width: 100%;
+  padding: 30px 10%;
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(15px);
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+/* --- Front Page / Hero Section --- */
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center;     /* Centers horizontally */
+  text-align: center;      /* Centers text lines */
+  padding: 0 10%;          /* Matches your nav/footer padding */
+  gap: 20px;               /* Consistent spacing between title and subtitle */
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--text-dim);
+  max-width: 800px;        /* Keeps text from stretching too wide */
+  line-height: 1.6;
+  margin: 0;
+}
