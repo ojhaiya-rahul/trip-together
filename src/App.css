@@ -1,4 +1,4 @@
-/* --- Global Variables --- */
+
 :root {
   --primary: #818cf8; 
   --glass: rgba(255, 255, 255, 0.1); 
@@ -8,9 +8,9 @@
   --bg-dark: rgba(0, 0, 0, 0.4);
 }
 
-/* --- Base Layout --- */
+
 * {
-  box-sizing: border-box; /* Critical: prevents padding from pushing width beyond 100% */
+  box-sizing: border-box; 
 }
 
 body {
@@ -34,7 +34,7 @@ body {
   flex-direction: column;
 }
 
-/* --- Navigation --- */
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -60,29 +60,28 @@ body {
   transition: 0.3s ease;
 }
 
-/* --- Content Container --- */
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 0; /* Vertical padding only */
-  flex: 1;
+  padding: 40px 0; 
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* --- The Managed Card Grid (Fixed Card-to-Container Touching) --- */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
-  /* Fixed: This padding creates the gap between the cards and the container edge */
+  
   padding: 20px 5%; 
   width: 100%;
   justify-content: center;
 }
 
-/* --- Traveler Card --- */
+
 .user-card {
   background: rgba(255, 255, 255, 0.08); 
   backdrop-filter: blur(25px);
@@ -157,16 +156,16 @@ body {
   border-top: 1px solid var(--glass-border);
   text-align: center;
 }
-/* --- Front Page / Hero Section --- */
+
 .hero-section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center;     /* Centers horizontally */
-  text-align: center;      /* Centers text lines */
-  padding: 0 10%;          /* Matches your nav/footer padding */
-  gap: 20px;               /* Consistent spacing between title and subtitle */
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;      
+  padding: 0 10%;          
+  gap: 20px;               
 }
 
 .hero-title {
@@ -180,7 +179,7 @@ body {
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.4rem);
   color: var(--text-dim);
-  max-width: 800px;        /* Keeps text from stretching too wide */
+  max-width: 800px;        
   line-height: 1.6;
   margin: 0;
 }

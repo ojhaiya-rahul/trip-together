@@ -19,5 +19,5 @@ export const travelPartners = [
     interests: ["Adventure", "Hiking", "Nature"],
     travelStyle: "Backpacker"
   },
-  // Add more "partners" here to expand your search results
+  
 ];

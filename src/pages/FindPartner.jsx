@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { travelPartners } from '../data/dummyData';
 
 export default function FindPartner() {
-  // State for search filters
+ 
   const [place, setPlace] = useState('');
   const [budget, setBudget] = useState('');
 
-  // Logic to filter partners based on your input
+  
   const filteredPartners = travelPartners.filter(user => {
     const matchPlace = user.destination.toLowerCase().includes(place.toLowerCase());
     const matchBudget = budget === '' || user.budget <= parseInt(budget);
